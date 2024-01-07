@@ -37,7 +37,7 @@ export default function Home() {
         start: "top left",
         scrub: 1,
         end: "+=3000",
-        markers: true
+        markers: false
       }
     })
   }, { scope: wrapperRef })
@@ -81,7 +81,7 @@ export default function Home() {
           GALLARY
         </p>
       </nav>
-      <section className=' px-12 max-w-[1200px] mt-14 mx-auto  block  font-medium text-lg tracking-wide  '>
+      {/* <section className=' px-12 max-w-[1200px] mt-14 mx-auto  block  font-medium text-lg tracking-wide  '>
         <div className=' cursor-pointer hover:scale-105  duration-200  flex gap-14 justify-center max-h-[400px] overflow-clip'>
           <div className=' border-[2px] border-[#83c5be] shrink-0 h-[400px]  w-[400px] relative '>
             <Image className='object-cover object-top' src={'/img/mbc_cropped.jpg'} alt="image" fill />
@@ -122,7 +122,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <div ref={wrapperRef} className='wrapper overflow-x-hidden'>
         <div className='container min-w-[100vw] trapper'>
 
