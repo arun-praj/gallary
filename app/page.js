@@ -123,7 +123,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div ref={wrapperRef} className='wrapper'>
+      <div ref={wrapperRef} className='wrapper overflow-x-hidden'>
         <div className='container min-w-[100vw] trapper'>
 
           <div className=' pt-28 min-w-[100vw]  '>
