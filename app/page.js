@@ -95,7 +95,7 @@ export default function Home() {
               Sunday, 5 Feburary 23
             </h2>
             <p className='mt-5 font-sohne text-justify'>
-              Cathetometric serenely in the Himalayas, Mardi Base Camp offers a tranquil view of Machapuchare Himalaya. The quiet majesty of the sacred peak paints a calming tableau against the sky. It's a gentle invitation to find solace in nature's simple wonders, where the soul can quietly appreciate the beauty that surrounds it
+              Cathetometric serenely in the Himalayas, Mardi Base Camp offers a tranquil view of Machapuchare Himalaya. The quiet majesty of the sacred peak paints a calming tableau against the sky. It&apos;s a gentle invitation to find solace in nature&apos;s simple wonders, where the soul can quietly appreciate the beauty that surrounds it
             </p>
 
             <div className='mt-4'>
@@ -115,7 +115,7 @@ export default function Home() {
               Sunday, 5 Feburary 23
             </h2>
             <p className='mt-5  font-sohne  text-justify'>
-              Nestled serenely in the Himalayas, Mardi Base Camp offers a tranquil view of Machapuchare Himalaya. The quiet majesty of the sacred peak paints a calming tableau against the sky. It's a gentle invitation to find solace in nature's simple wonders, where the soul can quietly appreciate the beauty that surrounds it
+              Nestled serenely in the Himalayas, Mardi Base Camp offers a tranquil view of Machapuchare Himalaya. The quiet majesty of the sacred peak paints a calming tableau against the sky. It&apos;s a gentle invitation to find solace in nature&apos;s simple wonders, where the soul can quietly appreciate the beauty that surrounds it
             </p>
             <div className='mt-4'>
               <a className='tracking-widest underline cursor-pointer '>Read More</a>
