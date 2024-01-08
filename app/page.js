@@ -1,12 +1,18 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { motion, useTransform, useScroll } from "framer-motion";
 
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+function getCurrentDimension() {
+  return {
+    width: window.innerWidth,
+    height: window.innerHeight
+  }
+}
 
 export default function Home() {
 
@@ -18,16 +24,29 @@ export default function Home() {
 
   const wrapperRef = useRef(null)
 
+  const [screenSize, setScreenSize] = useState(getCurrentDimension());
+  useEffect(() => {
+    const updateDimension = () => {
+      setScreenSize(getCurrentDimension())
+    }
+    window.addEventListener('resize', updateDimension);
+
+    return (() => {
+      window.removeEventListener('resize', updateDimension);
+    })
+  }, [screenSize])
+
   useGSAP(() => {
     const sections = gsap.utils.toArray('.image')
     let each_section = gsap.to(sections, {
-      xPercent: -70 * (sections.length - 1),
+      xPercent: screenSize.width > 767 ? -100 * (sections.length - 1) : -130 * (sections.length - 1),
       ease: 'none',
       scrollTrigger: {
         trigger: '.container',
         pin: true,
         scrub: 1,
-        end: "+=3000"
+        end: screenSize.width > 767 ? "+=2000" : "+=3000",
+        markers: false
       }
     })
     gsap.to('.mask', {
@@ -36,7 +55,7 @@ export default function Home() {
         trigger: ".trapper",
         start: "top left",
         scrub: 1,
-        end: "+=3000",
+        end: screenSize.width > 767 ? "+=3000" : "+=2500",
         markers: false
       }
     })
@@ -72,15 +91,8 @@ export default function Home() {
     }
   }
   return (
-    <main className="  flex flex-col min-h-screen font-playfair text-4xl  font-bold">
-      <nav className=' flex flex-col items-center justify-center text-center h-36 border-b-2  tracking-widest'>
-        <p>
-          arun prajapati
-        </p>
-        <p className='  mt-2 text-base'>
-          GALLARY
-        </p>
-      </nav>
+    <main className=" min-h-screen font-playfair text-4xl  font-bold">
+
       {/* <section className=' px-12 max-w-[1200px] mt-14 mx-auto  block  font-medium text-lg tracking-wide  '>
         <div className=' cursor-pointer hover:scale-105  duration-200  flex gap-14 justify-center max-h-[400px] overflow-clip'>
           <div className=' border-[2px] border-[#83c5be] shrink-0 h-[400px]  w-[400px] relative '>
@@ -124,6 +136,7 @@ export default function Home() {
         </div>
       </section> */}
       <div ref={wrapperRef} className='wrapper overflow-x-hidden'>
+        {screenSize.height}*{screenSize.width}
         <div className='container min-w-[100vw] trapper'>
 
           <div className=' pt-28 min-w-[100vw]  '>
@@ -142,7 +155,7 @@ export default function Home() {
           <section className='pt-14 min-w-[100vw]  '>
             <div ref={track} id='image-track' className='  flex gap-[4vmin]  absolute left-14   translate-x-0 select-none ' >
               {/* data-mouse-down-at="0" data-prev-percentage="0" onTouchStart={(e) => handleOnDown(e.touches[0])} onMouseUp={(e) => handleOnUp(e)} onMouseMove={(e) => handleOnMove(e)} onMouseDown={(e) => handleOnDown(e)}> */}
-              <div className=' image h-[56vmin] w-[40vmin] relative'>
+              <div className=' image h-[86vmin] w-[70vmin] md:h-[56vmin] md:w-[40vmin]  relative'>
                 <Image
                   ref={pushRef}
                   style={{
@@ -151,32 +164,32 @@ export default function Home() {
                   draggable={"false"} className=' object-right object-cover '
                   src={'/img/mbc_tent.jpg'} alt="image" fill />
               </div>
-              <div className='image h-[56vmin] w-[40vmin] relative'>
+              <div className='image h-[86vmin] w-[70vmin] md:h-[56vmin] md:w-[40vmin]  relative'>
                 <Image
                   ref={pushRef}
                   draggable={"false"} className=' object-right object-cover ' src={'/img/mbc_bw.jpeg'} alt="image" fill />
               </div>
-              <div className='image h-[56vmin] w-[40vmin] relative'>
+              <div className='image h-[86vmin] w-[70vmin] md:h-[56vmin] md:w-[40vmin] relative'>
                 <Image
                   ref={pushRef}
                   draggable={"false"} className=' object-right ' src={'/img/fivetalle.jpg'} alt="image" fill />
               </div>
-              <div className='image h-[56vmin] w-[40vmin] relative'>
+              <div className='image h-[86vmin] w-[70vmin] md:h-[56vmin] md:w-[40vmin] relative'>
                 <Image draggable={"false"} className='object-center object-cover ' src={'/img/papa.jpg'} alt="image" fill />
               </div>
-              <div className='h-[56vmin] w-[40vmin] relative image'>
+              <div className='h-[86vmin] w-[70vmin] md:h-[56vmin] md:w-[40vmin] relative image'>
                 <Image draggable={"false"} className='object-center object-cover ' src={'/img/mbc2.jpg'} alt="image" fill />
               </div>
-              <div className='h-[56vmin] w-[40vmin] relative image'>
+              <div className='h-[86vmin] w-[70vmin] md:h-[56vmin] md:w-[40vmin] relative image'>
                 <Image draggable={"false"} className='object-center object-cover ' src={'/img/moon.jpg'} alt="image" fill />
               </div>
-              <div className='h-[56vmin] w-[40vmin] relative image'>
+              <div className='h-[86vmin] w-[70vmin] md:h-[56vmin] md:w-[40vmin] relative image'>
                 <Image draggable={"false"} className='object-center object-cover ' src={'/img/mbc_cropped.jpg'} alt="image" fill />
               </div>
-              <div className='h-[56vmin] w-[40vmin] relative image'>
+              <div className='h-[86vmin] w-[70vmin] md:h-[56vmin] md:w-[40vmin] relative image'>
                 <Image draggable={"false"} className='object-center object-cover ' src={'/img/mbc_cropped.jpg'} alt="image" fill />
               </div>
-              <div className='h-[56vmin] w-[40vmin] relative image'>
+              <div className='h-[86vmin] w-[70vmin] md:h-[56vmin] md:w-[40vmin] relative image'>
                 <Image draggable={"false"} className='object-center object-cover ' src={'/img/mbc_cropped.jpg'} alt="image" fill />
               </div>
 
@@ -185,9 +198,7 @@ export default function Home() {
         </div>
       </div>
 
-      <footer className='  h-[1000px] mt-[56vmin] w-screen min-h-12'>
-        asdf
-      </footer>
+
     </main>
   )
 }
