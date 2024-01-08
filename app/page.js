@@ -7,15 +7,11 @@ import { motion, useTransform, useScroll } from "framer-motion";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-function getCurrentDimension() {
-  return {
-    width: window.innerWidth,
-    height: window.innerHeight
-  }
-}
+
 
 export default function Home() {
-
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => setIsClient(true), []);
   gsap.registerPlugin(ScrollTrigger);
   const track = useRef(null)
 
@@ -25,7 +21,17 @@ export default function Home() {
   const wrapperRef = useRef(null)
 
   const [screenSize, setScreenSize] = useState(getCurrentDimension());
+
+  function getCurrentDimension() {
+    return {
+      width: isClient && window.innerWidth,
+      height: isClient && window.innerHeight
+    }
+  }
   useEffect(() => {
+    if (typeof window === 'undefined') {
+      global.window = {}
+    }
     const updateDimension = () => {
       setScreenSize(getCurrentDimension())
     }
