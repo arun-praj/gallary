@@ -142,7 +142,6 @@ export default function Home() {
         </div>
       </section> */}
       <div ref={wrapperRef} className='wrapper overflow-x-hidden'>
-        {screenSize.height}*{screenSize.width}
         <div className='container min-w-[100vw] trapper'>
 
           <div className=' pt-28 min-w-[100vw]  '>
