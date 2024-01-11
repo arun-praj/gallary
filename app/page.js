@@ -58,7 +58,7 @@ export default function Home() {
     gsap.to('.mask', {
       width: "100%",
       scrollTrigger: {
-        trigger: ".trapper",
+        trigger: ".wrapper",
         start: "top left",
         scrub: 1,
         end: screenSize.width > 767 ? "+=3000" : "+=2500",
