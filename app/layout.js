@@ -61,7 +61,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} ${poppins.variable} ${sohne.variable}`}>{children}</body>
+      <body className={`${playfair.variable} ${poppins.variable} ${sohne.variable} bg-[#0f0d0c]`}>{children}</body>
     </html>
   )
 }

@@ -160,6 +160,7 @@ export default function Home() {
           <section className='pt-14 min-w-[100vw]  '>
             <div ref={track} id='image-track' className='  flex gap-[4vmin]  absolute left-14   translate-x-0 select-none ' >
               {/* data-mouse-down-at="0" data-prev-percentage="0" onTouchStart={(e) => handleOnDown(e.touches[0])} onMouseUp={(e) => handleOnUp(e)} onMouseMove={(e) => handleOnMove(e)} onMouseDown={(e) => handleOnDown(e)}> */}
+
               <div className=' image h-[86vmin] w-[70vmin] md:h-[56vmin] md:w-[40vmin]  relative'>
                 <Image
                   ref={pushRef}
@@ -168,34 +169,64 @@ export default function Home() {
                   }}
                   draggable={"false"} className=' object-right object-cover '
                   src={'/img/mbc_tent.jpg'} alt="image" fill />
+                <div className=' mt-4  absolute bottom-[-4rem]  text-white text-lg z-30'>
+                  Mt. Machapuchare
+                </div>
               </div>
+
+
+
               <div className='image h-[86vmin] w-[70vmin] md:h-[56vmin] md:w-[40vmin]  relative'>
                 <Image
                   ref={pushRef}
                   draggable={"false"} className=' object-right object-cover ' src={'/img/mbc_bw.jpeg'} alt="image" fill />
               </div>
-              <div className='image h-[86vmin] w-[70vmin] md:h-[56vmin] md:w-[40vmin] relative'>
+
+              {/* <div> */}
+              <div className=' image h-[86vmin] w-[70vmin] md:h-[56vmin] md:w-[40vmin]  relative'>
                 <Image
                   ref={pushRef}
-                  draggable={"false"} className=' object-right ' src={'/img/fivetalle.jpg'} alt="image" fill />
+                  style={{
+                    objectPosition: "100% center"
+                  }}
+                  draggable={"false"} className=' object-right object-cover '
+                  src={'/img/fivetalle.jpg'} alt="image" fill />
+                <div className=' mt-4  absolute bottom-[-4rem]  text-white text-lg z-30'>
+                  Bhaktapur Darbase Square
+                </div>
               </div>
+              {/* <div className=' mt-4 tracking-wider text-white text-lg'>
+                  Kathmandu Darbar Square
+                </div> */}
+              {/* </div> */}
               <div className='image h-[86vmin] w-[70vmin] md:h-[56vmin] md:w-[40vmin] relative'>
                 <Image draggable={"false"} className='object-center object-cover ' src={'/img/papa.jpg'} alt="image" fill />
               </div>
               <div className='h-[86vmin] w-[70vmin] md:h-[56vmin] md:w-[40vmin] relative image'>
                 <Image draggable={"false"} className='object-center object-cover ' src={'/img/mbc2.jpg'} alt="image" fill />
               </div>
-              <div className='h-[86vmin] w-[70vmin] md:h-[56vmin] md:w-[40vmin] relative image'>
-                <Image draggable={"false"} className='object-center object-cover ' src={'/img/moon.jpg'} alt="image" fill />
+
+              {/* <div> */}
+              <div className=' image h-[86vmin] w-[70vmin] md:h-[56vmin] md:w-[40vmin]  relative'>
+                <Image
+                  ref={pushRef}
+                  style={{
+                    objectPosition: "100% center"
+                  }}
+                  draggable={"false"} className=' object-right object-cover '
+                  src={'/img/moon.jpg'} alt="image" fill />
+                <div className=' mt-4  absolute bottom-[-4rem]  text-white text-lg z-30'>
+                  The Moon
+                </div>
               </div>
               <div className='h-[86vmin] w-[70vmin] md:h-[56vmin] md:w-[40vmin] relative image'>
-                <Image draggable={"false"} className='object-center object-cover ' src={'/img/mbc_cropped.jpg'} alt="image" fill />
+                <Image draggable={"false"} className='object-center object-cover ' src={'/img/nanu.jpg'} alt="image" fill />
               </div>
               <div className='h-[86vmin] w-[70vmin] md:h-[56vmin] md:w-[40vmin] relative image'>
-                <Image draggable={"false"} className='object-center object-cover ' src={'/img/mbc_cropped.jpg'} alt="image" fill />
+                <Image draggable={"false"} className='object-center object-cover ' src={'/img/slesha.jpg'} alt="image" fill />
               </div>
               <div className='h-[86vmin] w-[70vmin] md:h-[56vmin] md:w-[40vmin] relative image'>
-                <Image draggable={"false"} className='object-center object-cover ' src={'/img/mbc_cropped.jpg'} alt="image" fill />
+                <Image draggable={"false"} className='object-center object-cover ' src={'/img/shree.jpg'} alt="image" fill />
               </div>
 
             </div>
